@@ -2,46 +2,37 @@ import React, { useState } from "react";
 import "./styles.css";
 const url = "https://aniliapi.herokuapp.com/";
 const App = () => {
+  const [animes, setAnimes] = useState([]);
+  fetch(url + "anime", {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      setAnimes(data);
+    });
   return (
     <>
       {" "}
-      {}
-      <div>
-        <form
-          action="https://localhost:5500/user/avatar/upload"
-          method="post"
-          enctype="multipart/form-data"
-        >
-          <input type="file" name="avatar" />
-        </form>
-      </div>
-      <AnimeInfo
-        title="Attack on Titan"
-        description="Anime about slaying titans"
-        releasedate={Date.now()}
-        aniId={1234}
-      />
-      <AnimeInfo
-        title="Attack on Titan Season 2"
-        description="Anime about slaying titans once again"
-        releasedate={Date.now()}
-        aniId={1243}
-      />
-      <AnimeInfo
-        title="Clannad"
-        description="An amazing anime about a group of teenagers."
-        releasedate={Date.now()}
-        aniId={4321}
-      />
+      {animes.map((anime) => (
+        <AnimeInfo
+          title={anime.title}
+          description={anime.description}
+          releasedate={anime.releasedate}
+          aniId={anime.aniId}
+        />
+      ))}
     </>
   );
 };
 
 const AnimeInfo = (props) => {
   const [showAniId, setAniId] = useState(false);
+
   return (
     <div className="aniEntry">
-      <img src="https://cdn.lewd.host/nhGyUn4L.png" alt="anime"></img>
+      <img src="https://cdn.lewd.host/8quWjaxx.png" alt="anime"></img>
       <div className="aniDetails">
         <p>Title: {props.title}</p>
         <p>Description: {props.description}</p>
@@ -67,4 +58,5 @@ console.log(
     return anidata;
   })
 );
+
 export default App;
