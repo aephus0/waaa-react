@@ -17,7 +17,7 @@ export default function Anime() {
 
   return (
     <>
-      <div className="grid md:grid-cols-5 grid-cols-2 gap-4">
+      <div className="grid xl:grid-cols-3 grid-cols-2 gap-4">
         {animes.map((anime) => (
           <AnimeInfo
             title={anime.title}
@@ -32,10 +32,10 @@ export default function Anime() {
 }
 const AnimeInfo = (props) => {
   return (
-    <div className="flex flex-row bg-grey-100 rounded-x1 p-8 md:p-0 bg-grey-50 my-2">
+    <div className="flex flex-row bg-grey-100 border-2 rounded-2x1 p-8 md:p-0 bg-grey-50 my-2 box-content mx-4 overflow-auto">
       <img
-        className="w-32 h-full  md:rounded-xl rounded-full mx-auto"
-        src="/images/goblin.png"
+        className="w-64 h-full  md:rounded-none rounded-full mx-auto bg-gray-50"
+        src="https://cdn.lewd.host/oUDSp1GB.png"
         alt="anime"
       ></img>
 
