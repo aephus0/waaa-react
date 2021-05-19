@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 const url = "https://aniliapi.herokuapp.com/";
+const { format } = require("date-fns");
 
 export default function Anime() {
   const [animes, setAnimes] = useState([]);
@@ -22,7 +23,7 @@ export default function Anime() {
           <AnimeInfo
             title={anime.title}
             description={anime.description}
-            releasedate={anime.date}
+            releasedate={format(new Date(anime.date), "dd/MM/yyyy")}
             aniId={anime.aniId}
           />
         ))}
