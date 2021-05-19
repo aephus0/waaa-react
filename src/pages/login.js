@@ -15,9 +15,9 @@ export default function Login() {
   }, []);
 
   return (
-    <div className="bg-gray-50 container flex mx-auto max-w-screed-md items-center h-screen">
+    <div className="bg-gray-100 container flex mx-auto max-w-screen-md items-center h-screen">
       <div className="flex w-1/3 max-w-xs ml-5 bg-transparent">
-        <img src="https://cdn.lewd.host/oUDSp1GB.png" alt="zero two" />
+        <img src="https://cdn.lewd.host/qbk23JtA.png" alt="zero two" />
       </div>
       <div className="flex flex-col w-1/3">
         <div className="flex flex-col items-center bg-white p-4 border rounded mb-2">
